@@ -6,12 +6,18 @@ public class TabletController : MonoBehaviour {
 
 	public float moveRate = .1f;
 
+
 	void Start(){
-		
 	}
 
 	void FixedUpdate(){
 		transform.position = new Vector2 (transform.position.x, transform.position.y + moveRate);
+
+
+		if (transform.position.y > 10) {
+			Destroy (gameObject);
+		}
+
 	}
 
 	void OnCollisionEnter2D(Collision2D target){

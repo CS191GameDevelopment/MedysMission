@@ -5,8 +5,9 @@ using UnityEngine;
 public class MedyController : MonoBehaviour {
 	public float moveRate = 0.2f;
 	public bool isDead = false;
-
+	public AudioClip tabletSound;
 	public Transform fireProjectile;
+	public float volume = 0.1f;
 
 	// Use this for initialization
 	void Start () {
@@ -25,6 +26,7 @@ public class MedyController : MonoBehaviour {
 		if(Input.GetKeyDown("space")){
 			Instantiate (fireProjectile, new Vector2(transform.position.x, transform.position.y)
 				, fireProjectile.rotation);
+			AudioSource.PlayClipAtPoint (tabletSound, transform.position);
 		}
 	}
 

@@ -80,6 +80,7 @@
     <Compile Include="Assets\Scripts\MeddyAndTabletPreparingForMissionController.cs" />
     <Compile Include="Assets\Scripts\MedyController.cs" />
     <Compile Include="Assets\Scripts\MedyIntroductionController.cs" />
+    <Compile Include="Assets\Scripts\SpikeController.cs" />
     <Compile Include="Assets\Scripts\TabletController.cs" />
     <Compile Include="Assets\Scripts\TabletIntroductionController.cs" />
   </ItemGroup>
