@@ -37,5 +37,17 @@ public class MedyController : MonoBehaviour {
 		//Move the player
 		transform.position = new Vector2(transform.position.x + moveX * moveRate
 			, transform.position.y + moveY * moveRate);
+		
+		if(transform.position.x > GlobalConstants.MAX_X_AXIS){
+			transform.position = new Vector2(GlobalConstants.MAX_X_AXIS, transform.position.y);
+		}else if(transform.position.x < GlobalConstants.MIN_X_AXIS){
+			transform.position = new Vector2(GlobalConstants.MIN_X_AXIS, transform.position.y);
+		}
+
+		if(transform.position.y > GlobalConstants.MAX_Y_AXIS){
+			transform.position = new Vector2(transform.position.x, GlobalConstants.MAX_Y_AXIS);
+		}else if(transform.position.y < GlobalConstants.MIN_Y_AXIS){
+			transform.position = new Vector2(transform.position.x, GlobalConstants.MIN_Y_AXIS);
+		}
 	}
 }
