@@ -19,4 +19,11 @@ public class GreenieController : MonoBehaviour {
 			Destroy (gameObject);
 		}
 	}
+
+	void OnCollisionEnter2D(Collision2D target){
+		if(target.gameObject.tag == "Tablet"){
+			Destroy (target.gameObject);
+			Destroy (gameObject);
+		}
+	}
 }

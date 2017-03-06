@@ -20,12 +20,5 @@ public class TabletController : MonoBehaviour {
 
 	}
 
-	void OnCollisionEnter2D(Collision2D target){
-		if(target.gameObject.tag == "TopBorder"){
-			Destroy (gameObject);
-		}else if(target.gameObject.tag == "Enemy"){
-			Destroy (gameObject);
-			Destroy (target.gameObject);
-		}
-	}
+
 }

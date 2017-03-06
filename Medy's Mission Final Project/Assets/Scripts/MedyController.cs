@@ -8,10 +8,11 @@ public class MedyController : MonoBehaviour {
 	public AudioClip tabletSound;
 	public Transform fireProjectile;
 	public float volume = 0.1f;
+	private int hp = 6;
 
 	// Use this for initialization
 	void Start () {
-
+		rigid
 	}
 
 	// Update is called once per frame
@@ -48,6 +49,23 @@ public class MedyController : MonoBehaviour {
 			transform.position = new Vector2(transform.position.x, GlobalConstants.MAX_Y_AXIS);
 		}else if(transform.position.y < GlobalConstants.MIN_Y_AXIS){
 			transform.position = new Vector2(transform.position.x, GlobalConstants.MIN_Y_AXIS);
+		}
+	}
+
+	public void OnCollisionEnter2D(Collision2D target){
+		if(target.gameObject.tag == "Yellowie" || target.gameObject.tag == "Greenie"
+			|| target.gameObject.tag == "Blackie" || target.gameObject.tag == "GermAttack"){
+
+			if(target.gameObject.tag == "GermAttack"){
+				Destroy (target.gameObject);
+			}
+
+			print ("Medy health: "+(hp-1));
+			if(--hp==0){
+				Destroy (gameObject);
+				Destroy (target.gameObject);	
+			}
+
 		}
 	}
 }

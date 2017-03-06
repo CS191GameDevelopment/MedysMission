@@ -5,6 +5,7 @@ using UnityEngine;
 public class YellowieController : MonoBehaviour {
 
 	public float moveRate = 0.1f;
+	private int hp =2;
 
 	// Use this for initialization
 	void Start () {
@@ -17,6 +18,16 @@ public class YellowieController : MonoBehaviour {
 
 		if (transform.position.y < -10) {
 			Destroy (gameObject);
+		}
+	}
+
+	void OnCollisionEnter2D(Collision2D target){
+		if(target.gameObject.tag == "Tablet"){
+			Destroy (target.gameObject);
+			print ("Yellowie health: " + (hp-1));
+			if(--hp == 0){
+				Destroy (gameObject);
+			}
 		}
 	}
 }

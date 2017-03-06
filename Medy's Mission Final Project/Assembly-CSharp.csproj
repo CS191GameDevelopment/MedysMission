@@ -46,9 +46,18 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\Scripts\BlackieController.cs" />
      <Compile Include="Assets\Scripts\GameplayHeartSceneController.cs" />
+     <Compile Include="Assets\Scripts\GermAttackController.cs" />
+     <Compile Include="Assets\Scripts\GlobalConstants.cs" />
+     <Compile Include="Assets\Scripts\GreenieController.cs" />
      <Compile Include="Assets\Scripts\HomeStartScreenController.cs" />
      <Compile Include="Assets\Scripts\MedyController.cs" />
+     <Compile Include="Assets\Scripts\SpawnerBrainController.cs" />
+     <Compile Include="Assets\Scripts\SpawnerFootController.cs" />
+     <Compile Include="Assets\Scripts\SpawnerHeartController.cs" />
+     <Compile Include="Assets\Scripts\SpawnerLimbController.cs" />
+     <Compile Include="Assets\Scripts\SpawnerStomachController.cs" />
      <Compile Include="Assets\Scripts\SpikeController.cs" />
      <Compile Include="Assets\Scripts\TabletController.cs" />
      <Compile Include="Assets\Scripts\TriviaBrainSceneController.cs" />
@@ -56,6 +65,7 @@
      <Compile Include="Assets\Scripts\TriviaHeartSceneController.cs" />
      <Compile Include="Assets\Scripts\TriviaLimbsSceneController.cs" />
      <Compile Include="Assets\Scripts\TriviaStomachSceneController.cs" />
+     <Compile Include="Assets\Scripts\YellowieController.cs" />
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
  </Reference>
