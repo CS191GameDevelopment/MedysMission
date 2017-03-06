@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class NewBehaviourScript2 : MonoBehaviour {
+public class TriviaStomachSceneController : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {

@@ -1,10 +1,14 @@
-﻿<Properties StartupItem="Medy's Mission Final Project.csproj">
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\MedyController.cs">
+﻿<Properties StartupItem="Assembly-CSharp.csproj">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\HomeStartScreenController.cs">
     <Files>
-      <File FileName="Assets\Scripts\SpikeController.cs" Line="20" Column="4" />
-      <File FileName="Assets\Scripts\TabletController.cs" Line="10" Column="15" />
-      <File FileName="Assets\Scripts\MedyController.cs" Line="29" Column="64" />
+      <File FileName="Assets\Scripts\SpikeController.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\TabletController.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\MedyController.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\TriviaHeartSceneController.cs" Line="5" Column="40" />
+      <File FileName="Assets\Scripts\TriviaLimbsSceneController.cs" Line="5" Column="39" />
+      <File FileName="Assets\Scripts\TriviaStomachSceneController.cs" Line="5" Column="42" />
+      <File FileName="Assets\Scripts\HomeStartScreenController.cs" Line="17" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
