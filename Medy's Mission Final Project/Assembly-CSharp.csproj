@@ -48,11 +48,13 @@
   <ItemGroup>
      <Compile Include="Assets\Scripts\BlackieController.cs" />
      <Compile Include="Assets\Scripts\GameplayHeartSceneController.cs" />
+     <Compile Include="Assets\Scripts\GameplayTimeController.cs" />
      <Compile Include="Assets\Scripts\GermAttackController.cs" />
      <Compile Include="Assets\Scripts\GlobalConstants.cs" />
      <Compile Include="Assets\Scripts\GreenieController.cs" />
      <Compile Include="Assets\Scripts\HomeStartScreenController.cs" />
      <Compile Include="Assets\Scripts\MedyController.cs" />
+     <Compile Include="Assets\Scripts\ScoreGeneratorController.cs" />
      <Compile Include="Assets\Scripts\SpawnerBrainController.cs" />
      <Compile Include="Assets\Scripts\SpawnerFootController.cs" />
      <Compile Include="Assets\Scripts\SpawnerHeartController.cs" />

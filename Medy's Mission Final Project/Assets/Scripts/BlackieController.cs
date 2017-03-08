@@ -4,12 +4,13 @@ using UnityEngine;
 
 public class BlackieController : MonoBehaviour {
 
-	public float moveRate = 0.007f;
+	public float moveRate;
 	public Transform fireProjectile;
 	private int hp = 3;
 
 	// Use this for initialization
 	void Start () {
+		moveRate = GlobalConstants.ENEMY_FALL_SPEED;
 		InvokeRepeating ("shoot", 0, 5);
 	}
 	

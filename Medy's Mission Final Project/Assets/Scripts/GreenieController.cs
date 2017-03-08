@@ -4,11 +4,11 @@ using UnityEngine;
 
 public class GreenieController : MonoBehaviour {
 
-	public float moveRate = 0.1f;
+	public float moveRate;
 
 	// Use this for initialization
 	void Start () {
-		
+		moveRate = GlobalConstants.ENEMY_FALL_SPEED;
 	}
 	
 	// Update is called once per frame

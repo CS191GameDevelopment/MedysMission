@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/Scenes/Game Over Scene.unity
+- path: Assets/Scenes/Gameplay - Stomach Scene.unity
   isLoaded: 1
   isActive: 1

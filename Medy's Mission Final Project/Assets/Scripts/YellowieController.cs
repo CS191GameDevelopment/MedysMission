@@ -4,12 +4,12 @@ using UnityEngine;
 
 public class YellowieController : MonoBehaviour {
 
-	public float moveRate = 0.1f;
+	public float moveRate;
 	private int hp =2;
 
 	// Use this for initialization
 	void Start () {
-		
+		moveRate = GlobalConstants.ENEMY_FALL_SPEED;
 	}
 	
 	// Update is called once per frame

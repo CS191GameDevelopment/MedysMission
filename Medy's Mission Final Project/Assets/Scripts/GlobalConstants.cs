@@ -8,4 +8,6 @@ public class GlobalConstants{
 
 	public static float MAX_Y_AXIS = 4.46f;
 	public static float MIN_Y_AXIS = -4.42f;
+
+	public static float ENEMY_FALL_SPEED = 0.03f;
 }

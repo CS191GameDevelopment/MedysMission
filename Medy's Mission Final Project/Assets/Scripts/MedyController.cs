@@ -9,10 +9,11 @@ public class MedyController : MonoBehaviour {
 	public Transform fireProjectile;
 	public float volume = 0.1f;
 	private int hp = 6;
+	private Animator animator;
 
 	// Use this for initialization
 	void Start () {
-		
+		animator = GameObject.Find ("Heart").GetComponent<Animator> ();
 	}
 
 	// Update is called once per frame
@@ -61,9 +62,12 @@ public class MedyController : MonoBehaviour {
 			}
 
 			print ("Medy health: "+(hp-1));
+			animator.SetInteger ("currentHP", hp-1);
+
 			if(--hp==0){
 				Destroy (gameObject);
-				Destroy (target.gameObject);	
+				Destroy (target.gameObject);
+				Application.LoadLevel ("Game Over Scene");
 			}
 
 		}
