@@ -24,9 +24,11 @@ public class YellowieController : MonoBehaviour {
 	void OnCollisionEnter2D(Collision2D target){
 		if(target.gameObject.tag == "Tablet"){
 			Destroy (target.gameObject);
+
 			print ("Yellowie health: " + (hp-1));
 			if(--hp == 0){
 				Destroy (gameObject);
+				GameObject.Find ("ScoreGenerator").GetComponent<ScoreGeneratorController> ().AddScore ();
 			}
 		}
 	}

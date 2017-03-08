@@ -32,9 +32,11 @@ public class BlackieController : MonoBehaviour {
 	void OnCollisionEnter2D(Collision2D target){
 		if(target.gameObject.tag == "Tablet"){
 			Destroy (target.gameObject);
+
 			print ("Blackie health: " + (hp-1));
 			if(--hp == 0){
 				Destroy (gameObject);
+				GameObject.Find ("ScoreGenerator").GetComponent<ScoreGeneratorController> ().AddScore ();
 			}
 		}
 	}

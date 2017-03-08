@@ -24,6 +24,7 @@ public class GreenieController : MonoBehaviour {
 		if(target.gameObject.tag == "Tablet"){
 			Destroy (target.gameObject);
 			Destroy (gameObject);
+			GameObject.Find ("ScoreGenerator").GetComponent<ScoreGeneratorController> ().AddScore ();
 		}
 	}
 }
