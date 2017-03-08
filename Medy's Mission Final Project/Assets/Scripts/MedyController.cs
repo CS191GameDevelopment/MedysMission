@@ -10,6 +10,7 @@ public class MedyController : MonoBehaviour {
 	public float volume = 0.1f;
 	private int hp = 6;
 	private Animator animator;
+	public AudioClip medyHurt;
 
 	// Use this for initialization
 	void Start () {
@@ -56,6 +57,8 @@ public class MedyController : MonoBehaviour {
 	public void OnCollisionEnter2D(Collision2D target){
 		if(target.gameObject.tag == "Yellowie" || target.gameObject.tag == "Greenie"
 			|| target.gameObject.tag == "Blackie" || target.gameObject.tag == "GermAttack"){
+
+			AudioSource.PlayClipAtPoint (medyHurt, transform.position);
 
 			if(target.gameObject.tag == "GermAttack"){
 				Destroy (target.gameObject);

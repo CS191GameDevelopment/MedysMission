@@ -21,7 +21,7 @@ public class SpawnerStomachController : MonoBehaviour {
 	void Start () {
 		InvokeRepeating ("GenerateGreenie", 0, 2);
 		InvokeRepeating ("GenerateYellowie", 0, 5);
-		InvokeRepeating ("GenerateBlackie", 0, 8);
+		InvokeRepeating ("GenerateBlackie", 5, 8);
 		/*InvokeRepeating ("GenerateReddie", 0, 2);
 		InvokeRepeating ("GenerateSpike1", spikeProbabilityMin, spikeProbabilityMax);
 		InvokeRepeating ("GenerateSpike2", spikeProbabilityMin, spikeProbabilityMax);

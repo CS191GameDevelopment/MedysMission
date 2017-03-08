@@ -16,8 +16,8 @@ public class ScoreGeneratorController : MonoBehaviour {
 		}
 	}
 
-	public void AddScore(){
-		currScore++;
+	public void AddScore(int num){
+		currScore += num ;
 		if(currScore>highScore){
 			highScore = currScore;
 			PlayerPrefs.SetInt ("highScore", currScore);

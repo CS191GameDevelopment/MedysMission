@@ -4,10 +4,9 @@ using UnityEngine;
 
 public class SpikeController : MonoBehaviour {
 
-	public float moveRate;
+	public float moveRate = 0.1f;
 	// Use this for initialization
 	void Start () {
-		moveRate = Random.Range (0.03f, 0.08f);
 	}
 	
 	// Update is called once per frame

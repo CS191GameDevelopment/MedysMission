@@ -6,6 +6,8 @@ public class YellowieController : MonoBehaviour {
 
 	public float moveRate;
 	private int hp =2;
+	public AudioClip yellowieHurt;
+	public AudioClip yellowieDies;
 
 	// Use this for initialization
 	void Start () {
@@ -22,14 +24,20 @@ public class YellowieController : MonoBehaviour {
 	}
 
 	void OnCollisionEnter2D(Collision2D target){
-		if(target.gameObject.tag == "Tablet"){
+		if (target.gameObject.tag == "Tablet") {
 			Destroy (target.gameObject);
 
-			print ("Yellowie health: " + (hp-1));
-			if(--hp == 0){
+			AudioSource.PlayClipAtPoint (yellowieHurt, transform.position);
+
+			print ("Yellowie health: " + (hp - 1));
+			if (--hp == 0) {
+				AudioSource.PlayClipAtPoint (yellowieDies, transform.position);
 				Destroy (gameObject);
-				GameObject.Find ("ScoreGenerator").GetComponent<ScoreGeneratorController> ().AddScore ();
+				GameObject.Find ("ScoreGenerator").GetComponent<ScoreGeneratorController> ().AddScore (2);
 			}
+		} else if (target.gameObject.tag == "Medy") {
+			AudioSource.PlayClipAtPoint (yellowieDies, transform.position);
+			Destroy (gameObject);
 		}
 	}
 }

@@ -7,6 +7,8 @@ public class BlackieController : MonoBehaviour {
 	public float moveRate;
 	public Transform fireProjectile;
 	private int hp = 3;
+	public AudioClip blackieHurt;
+	public AudioClip blackieDies;
 
 	// Use this for initialization
 	void Start () {
@@ -31,14 +33,20 @@ public class BlackieController : MonoBehaviour {
 	}
 
 	void OnCollisionEnter2D(Collision2D target){
-		if(target.gameObject.tag == "Tablet"){
+		if (target.gameObject.tag == "Tablet") {
 			Destroy (target.gameObject);
 
-			print ("Blackie health: " + (hp-1));
-			if(--hp == 0){
+			AudioSource.PlayClipAtPoint (blackieHurt, transform.position);
+
+			print ("Blackie health: " + (hp - 1));
+			if (--hp == 0) {
+				AudioSource.PlayClipAtPoint (blackieDies, transform.position);
 				Destroy (gameObject);
-				GameObject.Find ("ScoreGenerator").GetComponent<ScoreGeneratorController> ().AddScore ();
+				GameObject.Find ("ScoreGenerator").GetComponent<ScoreGeneratorController> ().AddScore (3);
 			}
+		} else if (target.gameObject.tag == "Medy") {
+			AudioSource.PlayClipAtPoint (blackieDies, transform.position);
+			Destroy (gameObject);
 		}
 	}
 }

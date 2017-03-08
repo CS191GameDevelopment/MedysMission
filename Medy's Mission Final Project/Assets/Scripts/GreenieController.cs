@@ -5,6 +5,7 @@ using UnityEngine;
 public class GreenieController : MonoBehaviour {
 
 	public float moveRate;
+	public AudioClip greenieDies;
 
 	// Use this for initialization
 	void Start () {
@@ -21,10 +22,13 @@ public class GreenieController : MonoBehaviour {
 	}
 
 	void OnCollisionEnter2D(Collision2D target){
-		if(target.gameObject.tag == "Tablet"){
+		AudioSource.PlayClipAtPoint (greenieDies, transform.position);
+		if (target.gameObject.tag == "Tablet") {
 			Destroy (target.gameObject);
 			Destroy (gameObject);
-			GameObject.Find ("ScoreGenerator").GetComponent<ScoreGeneratorController> ().AddScore ();
+			GameObject.Find ("ScoreGenerator").GetComponent<ScoreGeneratorController> ().AddScore (1);
+		} else if (target.gameObject.tag == "Medy") {
+			Destroy (gameObject);
 		}
 	}
 }
