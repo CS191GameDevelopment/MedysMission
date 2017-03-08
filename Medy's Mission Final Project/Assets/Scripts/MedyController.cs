@@ -12,7 +12,7 @@ public class MedyController : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		rigid
+		
 	}
 
 	// Update is called once per frame
