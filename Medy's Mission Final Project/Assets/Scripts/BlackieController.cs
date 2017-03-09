@@ -9,10 +9,14 @@ public class BlackieController : MonoBehaviour {
 	private int hp = 3;
 	public AudioClip blackieHurt;
 	public AudioClip blackieDies;
+	private Animator animator;
 
 	// Use this for initialization
 	void Start () {
 		moveRate = GlobalConstants.ENEMY_FALL_SPEED;
+
+		moveRate = 0f;
+
 		InvokeRepeating ("shoot", 0, 5);
 	}
 	
@@ -27,10 +31,21 @@ public class BlackieController : MonoBehaviour {
 
 	public void shoot(){
 		print ("Blackie shooting");
-		print (null==fireProjectile);
+
+		animator = this.gameObject.GetComponent<Animator> ();
+		animator.SetBool ("isFiring",true);
+
+		StartCoroutine (stopFiringAnim());
+	}
+
+	IEnumerator stopFiringAnim(){
+		yield return new WaitForSeconds (1.5f);
 		Instantiate (fireProjectile, new Vector2(transform.position.x, transform.position.y)
 			, fireProjectile.rotation);
+		print ("Waited");
+		animator.SetBool ("isFiring",false);
 	}
+
 
 	void OnCollisionEnter2D(Collision2D target){
 		if (target.gameObject.tag == "Tablet") {

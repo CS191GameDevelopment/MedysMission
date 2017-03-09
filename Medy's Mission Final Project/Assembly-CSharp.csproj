@@ -54,6 +54,8 @@
      <Compile Include="Assets\Scripts\GreenieController.cs" />
      <Compile Include="Assets\Scripts\HomeStartScreenController.cs" />
      <Compile Include="Assets\Scripts\MedyController.cs" />
+     <Compile Include="Assets\Scripts\ReddieController.cs" />
+     <Compile Include="Assets\Scripts\RulesScreenScript.cs" />
      <Compile Include="Assets\Scripts\ScoreGeneratorController.cs" />
      <Compile Include="Assets\Scripts\SpawnerBrainController.cs" />
      <Compile Include="Assets\Scripts\SpawnerFootController.cs" />
