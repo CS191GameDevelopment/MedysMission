@@ -5,7 +5,7 @@ using UnityEngine;
 public class ReddieController : MonoBehaviour {
 
 
-	public float moveRate = 0.1f;
+	private float moveRate;
 	public AudioClip reddieHurt;
 	public AudioClip reddieDies;
 	private int hp = 3;
@@ -13,6 +13,9 @@ public class ReddieController : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		moveRate = GlobalConstants.ENEMY_FALL_SPEED;
+
+		moveRate = 0f;
+
 		InvokeRepeating ("doubleteam", 0, 5);
 	}
 	
@@ -47,6 +50,15 @@ public class ReddieController : MonoBehaviour {
 
 
 	void doubleteam(){
-	//power of reddie to summon another reddie
+		//power of reddie to summon another reddie
+
+		print ("doubleteam");
+
+		Transform t = gameObject.transform;
+
+		//Destroy (gameObject);
+
+		Instantiate (t, new Vector2(transform.position.x + 10, transform.position.y +10)
+			, t.rotation);
 	}
 }
