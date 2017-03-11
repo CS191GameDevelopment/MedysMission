@@ -10,7 +10,14 @@ public class TriviaStomachSceneController : MonoBehaviour {
 	}
 	
 	// Update is called once per frame
-	void Update () {
-		
+	void FixedUpdate () {
+		if(Input.GetKeyUp(KeyCode.Return)){
+			print ("Enter pressed");
+			Application.LoadLevel ("Gameplay - Stomach Scene");
+		}
+		if(Input.GetKeyUp(KeyCode.Escape)){
+			print ("Escape pressed");
+			Application.Quit ();
+		}
 	}
 }

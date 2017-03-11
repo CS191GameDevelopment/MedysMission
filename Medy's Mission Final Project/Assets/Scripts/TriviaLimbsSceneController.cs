@@ -10,7 +10,14 @@ public class TriviaLimbSceneController : MonoBehaviour {
 	}
 	
 	// Update is called once per frame
-	void Update () {
-		
+	void FixedUpdate () {
+		if(Input.GetKeyUp(KeyCode.Return)){
+			print ("Enter pressed");
+			Application.LoadLevel ("Gameplay - Limbs Scene");
+		}
+		if(Input.GetKeyUp(KeyCode.Escape)){
+			print ("Escape pressed");
+			Application.Quit ();
+		}
 	}
 }

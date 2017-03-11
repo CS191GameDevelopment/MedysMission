@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class NewBehaviourScript1 : MonoBehaviour {
+public class TriviaFootSceneController : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
@@ -10,7 +10,14 @@ public class NewBehaviourScript1 : MonoBehaviour {
 	}
 	
 	// Update is called once per frame
-	void Update () {
-		
+	void FixedUpdate () {
+		if(Input.GetKeyUp(KeyCode.Return)){
+			print ("Enter pressed");
+			Application.LoadLevel ("Gameplay - Foot Scene");
+		}
+		if(Input.GetKeyUp(KeyCode.Escape)){
+			print ("Escape pressed");
+			Application.Quit ();
+		}
 	}
 }

@@ -15,7 +15,7 @@ public class BlackieController : MonoBehaviour {
 	void Start () {
 		moveRate = GlobalConstants.ENEMY_FALL_SPEED;
 
-		moveRate = 0f;
+		//moveRate = 0f;
 
 		InvokeRepeating ("shoot", 0, 5);
 	}
