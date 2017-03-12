@@ -20,7 +20,7 @@ public class GerminatorController : MonoBehaviour {
 	}
 	
 	// Update is called once per frame
-	void Update () {
+	void FixedUpdate () {
 
 		float x = transform.position.x;
 		float y = transform.position.y;
@@ -47,9 +47,12 @@ public class GerminatorController : MonoBehaviour {
 	public void OnCollisionEnter2D(Collision2D target){
 		if(target.gameObject.tag == "Tablet"){
 			Destroy (target.gameObject);
-			animator.SetInteger ("germHeartHp", hp--);
-			if(hp==0){
-				
+
+			print ("Germinator HP: "+(hp-1));
+			animator.SetInteger ("germHeartHp", hp-1);
+
+			if(--hp==0){
+				Application.LoadLevel ("Congratulations Scene");
 			}
 		}
 	}

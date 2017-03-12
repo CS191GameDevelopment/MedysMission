@@ -3,8 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class GameplayTimeController : MonoBehaviour {
-
+public class GameplayHeartTimeController : MonoBehaviour {
 	public int timeLeft;
 
 	// Use this for initialization
@@ -18,12 +17,12 @@ public class GameplayTimeController : MonoBehaviour {
 		if (timeLeft > 0) {
 			timeLeft--;
 		} else {
-			Application.LoadLevel ("Game Over Scene");
+			Application.LoadLevel ("Level Success Heart Scene");
 		}
 	}
 
 	// Update is called once per frame
 	void Update () {
-		
+
 	}
 }

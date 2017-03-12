@@ -11,6 +11,7 @@ public class MedyController : MonoBehaviour {
 	private int hp = 6;
 	private Animator animator;
 	public AudioClip medyHurt;
+	private bool firingAllowed = true;
 
 	// Use this for initialization
 	void Start () {
@@ -26,11 +27,19 @@ public class MedyController : MonoBehaviour {
 	}
 
 	public void shoot(){
-		if(Input.GetKeyDown("space")){
+		if(Input.GetKeyDown("space") && firingAllowed==true){
 			Instantiate (fireProjectile, new Vector2(transform.position.x, transform.position.y)
 				, fireProjectile.rotation);
 			AudioSource.PlayClipAtPoint (tabletSound, transform.position);
+			firingAllowed = false;
+			StartCoroutine (delay());
 		}
+	}
+
+	IEnumerator delay(){
+		print ("Firing Delay");
+		yield return new WaitForSeconds (1.0f);
+		firingAllowed = true;
 	}
 
 	public void movePlayer(){
