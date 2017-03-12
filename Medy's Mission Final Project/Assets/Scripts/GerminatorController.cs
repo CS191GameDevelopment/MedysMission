@@ -10,9 +10,13 @@ public class GerminatorController : MonoBehaviour {
 
 	private float adjustmentLimit = 3f;
 
+	private int hp = 20;
+
+	private Animator animator;
+
 	// Use this for initialization
 	void Start () {
-		
+		animator = GameObject.Find ("Germinator Heart").GetComponent<Animator> ();
 	}
 	
 	// Update is called once per frame
@@ -43,6 +47,10 @@ public class GerminatorController : MonoBehaviour {
 	public void OnCollisionEnter2D(Collision2D target){
 		if(target.gameObject.tag == "Tablet"){
 			Destroy (target.gameObject);
+			animator.SetInteger ("germHeartHp", hp--);
+			if(hp==0){
+				
+			}
 		}
 	}
 }
