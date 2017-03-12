@@ -12,11 +12,14 @@ public class GerminatorController : MonoBehaviour {
 
 	private int hp = 20;
 
-	private Animator animator;
+	private Animator germHeartanimator;
+
+	private Animator germAnimator;
 
 	// Use this for initialization
 	void Start () {
-		animator = GameObject.Find ("Germinator Heart").GetComponent<Animator> ();
+		germHeartanimator = GameObject.Find ("Germinator Heart").GetComponent<Animator> ();
+		germAnimator = gameObject.GetComponent<Animator> ();
 	}
 	
 	// Update is called once per frame
@@ -49,11 +52,19 @@ public class GerminatorController : MonoBehaviour {
 			Destroy (target.gameObject);
 
 			print ("Germinator HP: "+(hp-1));
-			animator.SetInteger ("germHeartHp", hp-1);
+			germHeartanimator.SetInteger ("germHeartHp", hp-1);
 
 			if(--hp==0){
-				Application.LoadLevel ("Congratulations Scene");
+				Destroy (GameObject.Find ("Germinator Heart"));
+				germAnimator.SetBool ("isDead", true);
+				StartCoroutine (endGame());
 			}
 		}
+	}
+
+	IEnumerator endGame(){
+		print ("Firing Delay");
+		yield return new WaitForSeconds (2.0f);
+		Application.LoadLevel ("Congratulations Scene");
 	}
 }
