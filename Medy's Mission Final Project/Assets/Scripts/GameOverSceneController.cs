@@ -3,16 +3,23 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class CongratulationsSceneController : MonoBehaviour {
+public class GameOverSceneController : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		GameObject.Find ("Running Score").GetComponent<Text>().text
-		= PlayerPrefs.GetInt ("runningScore").ToString();
+		int highScore = 0;
+
+		if(PlayerPrefs.HasKey("highScore")){
+			highScore = PlayerPrefs.GetInt("highScore");
+		}else{
+			PlayerPrefs.SetInt ("highScore",0);
+		}
+
+		GameObject.Find ("HighScoreValue").GetComponent<Text>().text = highScore.ToString ();
 	}
 	
 	// Update is called once per frame
-	void Update () {
+	void FixedUpdate () {
 		if(Input.GetKeyUp(KeyCode.Return)){
 			print ("Enter pressed");
 			Application.LoadLevel ("Home Start Screen");

@@ -3,8 +3,8 @@ using System.Collections;
 using UnityEngine.UI;
 
 public class ScoreGeneratorController : MonoBehaviour {
-	public int currScore = 0;
-	public int highScore = 0;
+	public int currScore;
+	public int highScore;
 
 	// Use this for initialization
 	void Start () {
@@ -14,10 +14,15 @@ public class ScoreGeneratorController : MonoBehaviour {
 		}else{
 			PlayerPrefs.SetInt ("highScore",0);
 		}
+
+		currScore = PlayerPrefs.GetInt ("runningScore");
 	}
 
 	public void AddScore(int num){
 		currScore += num ;
+
+		PlayerPrefs.SetInt ("runningScore", currScore);
+
 		if(currScore>highScore){
 			highScore = currScore;
 			PlayerPrefs.SetInt ("highScore", currScore);

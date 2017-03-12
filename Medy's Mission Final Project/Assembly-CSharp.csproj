@@ -48,11 +48,14 @@
   <ItemGroup>
      <Compile Include="Assets\DummyReddy.cs" />
      <Compile Include="Assets\Scripts\BlackieController.cs" />
+     <Compile Include="Assets\Scripts\CongratulationsSceneController.cs" />
+     <Compile Include="Assets\Scripts\GameOverSceneController.cs" />
      <Compile Include="Assets\Scripts\GameplayFootTimeController.cs" />
      <Compile Include="Assets\Scripts\GameplayHeartSceneController.cs" />
      <Compile Include="Assets\Scripts\GameplayHeartTimeController.cs" />
      <Compile Include="Assets\Scripts\GameplayLimbsTimeController.cs" />
      <Compile Include="Assets\Scripts\GameplayStomachTimeController.cs" />
+     <Compile Include="Assets\Scripts\GeneralSplashScreenController.cs" />
      <Compile Include="Assets\Scripts\GermAttackController.cs" />
      <Compile Include="Assets\Scripts\GerminatorController.cs" />
      <Compile Include="Assets\Scripts\GlobalConstants.cs" />
