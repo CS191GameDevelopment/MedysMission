@@ -9,7 +9,7 @@ public class BlackieController : MonoBehaviour {
 	private int hp = 3;
 	public AudioClip blackieHurt;
 	public AudioClip blackieDies;
-	private Animator animator;
+	private Animator blackieAnimator;
 
 	// Use this for initialization
 	void Start () {
@@ -32,8 +32,8 @@ public class BlackieController : MonoBehaviour {
 	public void shoot(){
 		print ("Blackie shooting");
 
-		animator = this.gameObject.GetComponent<Animator> ();
-		animator.SetBool ("isFiring",true);
+		blackieAnimator = this.gameObject.GetComponent<Animator> ();
+		blackieAnimator.SetBool ("isFiring",true);
 
 		StartCoroutine (stopFiringAnim());
 	}
@@ -43,7 +43,7 @@ public class BlackieController : MonoBehaviour {
 		Instantiate (fireProjectile, new Vector2(transform.position.x, transform.position.y)
 			, fireProjectile.rotation);
 		print ("Waited");
-		animator.SetBool ("isFiring",false);
+		blackieAnimator.SetBool ("isFiring",false);
 	}
 
 
@@ -56,7 +56,13 @@ public class BlackieController : MonoBehaviour {
 			print ("Blackie health: " + (hp - 1));
 			if (--hp == 0) {
 				AudioSource.PlayClipAtPoint (blackieDies, transform.position);
-				Destroy (gameObject);
+				//Destroy (gameObject);
+
+				if(null==blackieAnimator){
+					blackieAnimator = gameObject.GetComponent<Animator> ();
+				}
+				blackieAnimator.SetBool ("isDead", true);
+
 				GameObject.Find ("ScoreGenerator").GetComponent<ScoreGeneratorController> ().AddScore (3);
 			}
 		} else if (target.gameObject.tag == "Medy") {

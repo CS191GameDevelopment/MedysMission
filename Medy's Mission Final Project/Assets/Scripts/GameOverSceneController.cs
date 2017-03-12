@@ -9,6 +9,9 @@ public class GameOverSceneController : MonoBehaviour {
 	void Start () {
 		int highScore = 0;
 
+		GameObject.Find ("Running Score").GetComponent<Text>().text
+		= PlayerPrefs.GetInt ("runningScore").ToString();
+
 		if(PlayerPrefs.HasKey("highScore")){
 			highScore = PlayerPrefs.GetInt("highScore");
 		}else{

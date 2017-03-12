@@ -9,13 +9,17 @@ public class MedyController : MonoBehaviour {
 	public Transform fireProjectile;
 	public float volume = 0.1f;
 	private int hp = 6;
-	private Animator animator;
+
+	private Animator heartAnimator;
+	private Animator medyAnimator;
+
 	public AudioClip medyHurt;
 	private bool firingAllowed = true;
 
 	// Use this for initialization
 	void Start () {
-		animator = GameObject.Find ("Heart").GetComponent<Animator> ();
+		heartAnimator = GameObject.Find ("Heart").GetComponent<Animator> ();
+		medyAnimator = GameObject.Find ("Medy").GetComponent<Animator> ();
 	}
 
 	// Update is called once per frame
@@ -32,13 +36,13 @@ public class MedyController : MonoBehaviour {
 				, fireProjectile.rotation);
 			AudioSource.PlayClipAtPoint (tabletSound, transform.position);
 			firingAllowed = false;
-			StartCoroutine (delay());
+			StartCoroutine (delayFiring());
 		}
 	}
 
-	IEnumerator delay(){
+	IEnumerator delayFiring(){
 		print ("Firing Delay");
-		yield return new WaitForSeconds (1.0f);
+		yield return new WaitForSeconds (0.1f);
 		firingAllowed = true;
 	}
 
@@ -73,10 +77,16 @@ public class MedyController : MonoBehaviour {
 				Destroy (target.gameObject);
 			}
 
-			print ("Medy health: "+(hp-1));
-			animator.SetInteger ("currentHP", hp-1);
+			hp--;
 
-			if(--hp==0){
+			heartAnimator.SetInteger ("currentHP", hp);
+
+			print ("Medy health: "+(hp));
+
+			if(hp==1){
+				print ("MEDY IS HURT");
+				medyAnimator.SetBool ("isHurt", true);
+			}else if(hp==0){
 				Destroy (gameObject);
 				Destroy (target.gameObject);
 				Application.LoadLevel ("Game Over Scene");
@@ -85,3 +95,4 @@ public class MedyController : MonoBehaviour {
 		}
 	}
 }
+

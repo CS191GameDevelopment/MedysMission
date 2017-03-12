@@ -1,12 +1,14 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class LevelSuccessHeartSceneController : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		
+		GameObject.Find ("Running Score").GetComponent<Text>().text
+		= PlayerPrefs.GetInt ("runningScore").ToString();
 	}
 	
 	// Update is called once per frame

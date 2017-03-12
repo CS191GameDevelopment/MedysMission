@@ -7,9 +7,12 @@ public class GreenieController : MonoBehaviour {
 	public float moveRate;
 	public AudioClip greenieDies;
 
+	private Animator greenieAnimator;
+
 	// Use this for initialization
 	void Start () {
 		moveRate = GlobalConstants.ENEMY_FALL_SPEED;
+		greenieAnimator = gameObject.GetComponent<Animator> ();
 	}
 	
 	// Update is called once per frame
@@ -22,10 +25,12 @@ public class GreenieController : MonoBehaviour {
 	}
 
 	void OnCollisionEnter2D(Collision2D target){
+		greenieAnimator.SetBool("isGreenieDead", true);
 		AudioSource.PlayClipAtPoint (greenieDies, transform.position);
 		if (target.gameObject.tag == "Tablet") {
+			
+			//Destroy (gameObject);
 			Destroy (target.gameObject);
-			Destroy (gameObject);
 			GameObject.Find ("ScoreGenerator").GetComponent<ScoreGeneratorController> ().AddScore (1);
 		} else if (target.gameObject.tag == "Medy") {
 			Destroy (gameObject);

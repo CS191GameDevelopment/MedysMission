@@ -7,8 +7,11 @@ public class CongratulationsSceneController : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		GameObject.Find ("Running Score").GetComponent<Text>().text
+		GameObject.Find ("Current Score").GetComponent<Text>().text
 		= PlayerPrefs.GetInt ("runningScore").ToString();
+
+		GameObject.Find ("HighScoreValue").GetComponent<Text>().text
+		= PlayerPrefs.GetInt ("highScore").ToString();
 	}
 	
 	// Update is called once per frame

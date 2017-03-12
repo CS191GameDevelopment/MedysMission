@@ -9,9 +9,12 @@ public class YellowieController : MonoBehaviour {
 	public AudioClip yellowieHurt;
 	public AudioClip yellowieDies;
 
+	private Animator yellowieAnimator;
+
 	// Use this for initialization
 	void Start () {
 		moveRate = GlobalConstants.ENEMY_FALL_SPEED;
+		yellowieAnimator = gameObject.GetComponent<Animator> ();
 	}
 	
 	// Update is called once per frame
@@ -32,7 +35,8 @@ public class YellowieController : MonoBehaviour {
 			print ("Yellowie health: " + (hp - 1));
 			if (--hp == 0) {
 				AudioSource.PlayClipAtPoint (yellowieDies, transform.position);
-				Destroy (gameObject);
+				//Destroy (gameObject);
+				yellowieAnimator.SetBool("isYellowieDead", true);
 				GameObject.Find ("ScoreGenerator").GetComponent<ScoreGeneratorController> ().AddScore (2);
 			}
 		} else if (target.gameObject.tag == "Medy") {
