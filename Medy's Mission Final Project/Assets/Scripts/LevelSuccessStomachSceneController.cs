@@ -11,6 +11,13 @@ public class LevelSuccessStomachSceneController : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		
+		if(Input.GetKeyUp(KeyCode.Return)){
+			print ("Enter pressed");
+			Application.LoadLevel ("Trivia - Heart Scene");
+		}
+		if(Input.GetKeyUp(KeyCode.Escape)){
+			print ("Escape pressed");
+			Application.Quit ();
+		}
 	}
 }

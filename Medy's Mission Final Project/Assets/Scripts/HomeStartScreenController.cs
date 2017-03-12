@@ -14,7 +14,7 @@ public class HomeStartScreenController : MonoBehaviour {
 	void FixedUpdate () {
 		if(Input.GetKeyUp(KeyCode.Return)){
 			print ("Enter pressed");
-			Application.LoadLevel ("2 - Medy Introduction");
+			Application.LoadLevel ("General Rules Splash Screen");
 		}
 		if(Input.GetKeyUp(KeyCode.Escape)){
 			print ("Escape pressed");
