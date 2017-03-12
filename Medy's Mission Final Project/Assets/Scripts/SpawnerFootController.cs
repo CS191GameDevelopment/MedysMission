@@ -37,7 +37,8 @@ public class SpawnerFootController : MonoBehaviour {
 	}
 
 	void GenerateGreenie(){
-		Instantiate (greenie, new Vector2 (Random.Range (left, right), Random.Range (upmin,upmax)), greenie.rotation);
+		Instantiate (greenie, new Vector2 (Random.Range (GlobalConstants.MIN_X_AXIS, GlobalConstants.MAX_X_AXIS),
+			GlobalConstants.MAX_Y_AXIS), greenie.rotation);
 	}
 
 	void GenerateSpike1(){

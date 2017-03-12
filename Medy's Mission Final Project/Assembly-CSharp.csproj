@@ -46,6 +46,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\DummyReddy.cs" />
      <Compile Include="Assets\Scripts\BlackieController.cs" />
      <Compile Include="Assets\Scripts\GameplayHeartSceneController.cs" />
      <Compile Include="Assets\Scripts\GameplayTimeController.cs" />
@@ -54,6 +55,7 @@
      <Compile Include="Assets\Scripts\GreenieController.cs" />
      <Compile Include="Assets\Scripts\HomeStartScreenController.cs" />
      <Compile Include="Assets\Scripts\MedyController.cs" />
+     <Compile Include="Assets\Scripts\ReddieCloneController.cs" />
      <Compile Include="Assets\Scripts\ReddieController.cs" />
      <Compile Include="Assets\Scripts\RulesScreenScript.cs" />
      <Compile Include="Assets\Scripts\ScoreGeneratorController.cs" />

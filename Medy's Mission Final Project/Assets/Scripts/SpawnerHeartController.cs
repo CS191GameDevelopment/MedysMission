@@ -13,10 +13,10 @@ public class SpawnerHeartController : MonoBehaviour {
 	public Transform spike3;
 	public Transform spike4;
 
-	public int left = -8,
-	right = 10,
-	upmin = 7,
-	upmax = 10;
+	public float left = GlobalConstants.MIN_X_AXIS,
+	right = GlobalConstants.MAX_X_AXIS,
+	upmin = GlobalConstants.MIN_Y_AXIS,
+	upmax = GlobalConstants.MAX_Y_AXIS;
 
 	int spikeProbabilityMin = 0,
 	spikeProbabilityMax = 2;

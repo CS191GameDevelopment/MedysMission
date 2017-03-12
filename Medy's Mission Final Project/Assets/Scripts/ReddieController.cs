@@ -13,17 +13,13 @@ public class ReddieController : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		moveRate = GlobalConstants.ENEMY_FALL_SPEED;
-
-		moveRate = 0f;
-
-		InvokeRepeating ("doubleteam", 0, 5);
 	}
 	
 	// Update is called once per frame
 	void Update () {
 		transform.position = new Vector2 (transform.position.x, transform.position.y - moveRate);
 
-		if (transform.position.y < -10) {
+		if (transform.position.y < GlobalConstants.MIN_Y_AXIS-3) {
 			Destroy (gameObject);
 		}
 		
@@ -46,19 +42,5 @@ public class ReddieController : MonoBehaviour {
 			AudioSource.PlayClipAtPoint (reddieDies, transform.position);
 			Destroy (gameObject);
 		}
-	}
-
-
-	void doubleteam(){
-		//power of reddie to summon another reddie
-
-		print ("doubleteam");
-
-		Transform t = gameObject.transform;
-
-		//Destroy (gameObject);
-
-		Instantiate (t, new Vector2(transform.position.x + 10, transform.position.y +10)
-			, t.rotation);
 	}
 }
