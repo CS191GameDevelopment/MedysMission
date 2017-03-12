@@ -1,9 +1,18 @@
 fileFormatVersion: 2
 guid: 924ab7f0d5cb74e4689dac43ff02d00b
-timeCreated: 1489224601
+timeCreated: 1489283299
 licenseType: Free
 TextureImporter:
-  fileIDToRecycleName: {}
+  fileIDToRecycleName:
+    21300000: BlackieHurt_0
+    21300002: BlackieHurt_1
+    21300004: BlackieHurt_2
+    21300006: BlackieHurt_3
+    21300008: BlackieHurt_4
+    21300010: BlackieHurt_5
+    21300012: BlackieHurt_6
+    21300014: BlackieHurt_7
+    21300016: BlackieHurt_8
   serializedVersion: 4
   mipmaps:
     mipMapMode: 0
@@ -34,7 +43,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -58,9 +67,134 @@ TextureImporter:
     crunchedCompression: 0
     allowsAlphaSplitting: 0
     overridden: 0
+  - buildTarget: Standalone
+    maxTextureSize: 2048
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: BlackieHurt_0
+      rect:
+        serializedVersion: 2
+        x: 5
+        y: 108
+        width: 103
+        height: 96
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: BlackieHurt_1
+      rect:
+        serializedVersion: 2
+        x: 108
+        y: 120
+        width: 88
+        height: 76
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: BlackieHurt_2
+      rect:
+        serializedVersion: 2
+        x: 200
+        y: 122
+        width: 88
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: BlackieHurt_3
+      rect:
+        serializedVersion: 2
+        x: 291
+        y: 120
+        width: 85
+        height: 76
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: BlackieHurt_4
+      rect:
+        serializedVersion: 2
+        x: 396
+        y: 124
+        width: 87
+        height: 69
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: BlackieHurt_5
+      rect:
+        serializedVersion: 2
+        x: 500
+        y: 124
+        width: 86
+        height: 73
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: BlackieHurt_6
+      rect:
+        serializedVersion: 2
+        x: 599
+        y: 124
+        width: 86
+        height: 69
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: BlackieHurt_7
+      rect:
+        serializedVersion: 2
+        x: 696
+        y: 120
+        width: 85
+        height: 73
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: BlackieHurt_8
+      rect:
+        serializedVersion: 2
+        x: 789
+        y: 108
+        width: 103
+        height: 96
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
     outline: []
   spritePackingTag: 
   userData: 

@@ -48,7 +48,7 @@ public class SpawnerBrainController : MonoBehaviour {
 
 	Transform getRandomeHoleTransform(){
 		int n = Random.Range (0,4);
-		
+		return null;
 	}
 
 	void GenerateGreenie(){
