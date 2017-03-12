@@ -29,16 +29,8 @@ public class SpawnerBrainController : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		InvokeRepeating ("GenerateGreenie", 0, 2);
-		/*
-		InvokeRepeating ("GenerateYellowie", 0, 2);
-		InvokeRepeating ("GenerateBlackie", 0, 2);
-		InvokeRepeating ("GenerateReddie", 0, 2);
-		InvokeRepeating ("GenerateSpike1", spikeProbabilityMin, spikeProbabilityMax);
-		InvokeRepeating ("GenerateSpike2", spikeProbabilityMin, spikeProbabilityMax);
-		InvokeRepeating ("GenerateSpike3", spikeProbabilityMin, spikeProbabilityMax);
-		InvokeRepeating ("GenerateSpike4", spikeProbabilityMin, spikeProbabilityMax);
-		*/
+		InvokeRepeating ("spawnGerms", 0, 10);
+
 	}
 	
 	// Update is called once per frame
@@ -46,41 +38,37 @@ public class SpawnerBrainController : MonoBehaviour {
 		
 	}
 
-	Transform getRandomeHoleTransform(){
-		int n = Random.Range (0,4);
-		return null;
+	Transform getRandomEnemy (){
+		int n = Random.Range (1,4);
+
+		Transform ret = null;
+
+		switch(n){
+		case 1: ret = greenie; 		
+			break;
+		case 2: ret = yellowie;
+			break;
+		case 3: ret = blackie;
+			break;
+		case 4: ret = reddie; 		
+			break;
+		}
+
+		return ret;
 	}
 
-	void GenerateGreenie(){
-		Instantiate (greenie, new Vector2 (hole1.transform.position.x
+
+	void spawnGerms (){
+		Instantiate (getRandomEnemy(), new Vector2 (hole1.transform.position.x
 			,hole1.transform.position.y), greenie.rotation);
+		Instantiate (getRandomEnemy(), new Vector2 (hole2.transform.position.x
+			,hole2.transform.position.y), greenie.rotation);
+		Instantiate (getRandomEnemy(), new Vector2 (hole3.transform.position.x
+			,hole3.transform.position.y), greenie.rotation);
+		Instantiate (getRandomEnemy(), new Vector2 (hole4.transform.position.x
+			,hole4.transform.position.y), greenie.rotation);
 	}
+
 	
-	void GenerateYellowie(){
-		Instantiate (yellowie, new Vector2 (Random.Range (left, right), Random.Range (upmin,upmax)), greenie.rotation);
-	}
 
-	void GenerateBlackie(){
-		Instantiate (blackie, new Vector2 (Random.Range (left, right), Random.Range (upmin,upmax)), greenie.rotation);
-	}
-
-	void GenerateReddie(){
-		Instantiate (reddie, new Vector2 (Random.Range (left, right), Random.Range (upmin,upmax)), greenie.rotation);
-	}
-
-	void GenerateSpike1(){
-		Instantiate (spike1, new Vector2 (Random.Range (left, right), Random.Range (upmin,upmax)), greenie.rotation);
-	}
-
-	void GenerateSpike2(){
-		Instantiate (spike2, new Vector2 (Random.Range (left, right), Random.Range (upmin,upmax)), greenie.rotation);
-	}
-
-	void GenerateSpike3(){
-		Instantiate (spike3, new Vector2 (Random.Range (left, right), Random.Range (upmin,upmax)), greenie.rotation);
-	}
-
-	void GenerateSpike4(){
-		Instantiate (spike4, new Vector2 (Random.Range (left, right), Random.Range (upmin,upmax)), greenie.rotation);
-	}
 }

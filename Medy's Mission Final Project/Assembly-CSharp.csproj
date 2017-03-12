@@ -51,6 +51,7 @@
      <Compile Include="Assets\Scripts\GameplayHeartSceneController.cs" />
      <Compile Include="Assets\Scripts\GameplayTimeController.cs" />
      <Compile Include="Assets\Scripts\GermAttackController.cs" />
+     <Compile Include="Assets\Scripts\GerminatorController.cs" />
      <Compile Include="Assets\Scripts\GlobalConstants.cs" />
      <Compile Include="Assets\Scripts\GreenieController.cs" />
      <Compile Include="Assets\Scripts\HomeStartScreenController.cs" />
