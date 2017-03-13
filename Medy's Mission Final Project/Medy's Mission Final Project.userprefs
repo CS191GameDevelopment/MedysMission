@@ -1,12 +1,13 @@
 ﻿<Properties StartupItem="Assembly-CSharp.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\BlackieController.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\GameplayFootTimeController.cs">
     <Files>
-      <File FileName="Assets\Scripts\GameplayLimbsTimeController.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\MedyController.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\GerminatorController.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\BlackieController.cs" Line="71" Column="4" />
-      <File FileName="Assets\Scripts\GameOverSceneController.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\SpawnerLimbController.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\SpawnerBrainController.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\SpawnerFootController.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\SpawnerHeartController.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\SpawnerStomachController.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\GameplayFootTimeController.cs" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

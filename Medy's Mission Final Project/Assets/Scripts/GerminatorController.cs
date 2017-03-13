@@ -57,6 +57,7 @@ public class GerminatorController : MonoBehaviour {
 			if(--hp==0){
 				Destroy (GameObject.Find ("Germinator Heart"));
 				germAnimator.SetBool ("isDead", true);
+				GameObject.Find ("ScoreGenerator").GetComponent<ScoreGeneratorController> ().AddScore (20);
 				StartCoroutine (endGame());
 			}
 		}

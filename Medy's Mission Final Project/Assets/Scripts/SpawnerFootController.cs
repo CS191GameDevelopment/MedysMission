@@ -10,25 +10,19 @@ public class SpawnerFootController : MonoBehaviour {
 	public Transform spike3;
 	public Transform spike4;
 
-	public int left = -8,
-	right = 10,
-	upmin = 7,
-	upmax = 10;
-
-	int spikeProbabilityMin = 0,
-	spikeProbabilityMax = 2;
+	public float left = GlobalConstants.MIN_X_AXIS+5, 
+	right = GlobalConstants.MAX_X_AXIS-5,
+	upmin = 7f,
+	upmax = 10f;
 
 
 	// Use this for initialization
 	void Start () {
 		InvokeRepeating ("GenerateGreenie", 0, 2);
-		InvokeRepeating ("GenerateYellowie", 0, 2);
-		InvokeRepeating ("GenerateBlackie", 0, 2);
-		InvokeRepeating ("GenerateReddie", 0, 2);
-		InvokeRepeating ("GenerateSpike1", spikeProbabilityMin, spikeProbabilityMax);
-		InvokeRepeating ("GenerateSpike2", spikeProbabilityMin, spikeProbabilityMax);
-		InvokeRepeating ("GenerateSpike3", spikeProbabilityMin, spikeProbabilityMax);
-		InvokeRepeating ("GenerateSpike4", spikeProbabilityMin, spikeProbabilityMax);
+		InvokeRepeating ("GenerateSpike1", 0, 5);
+		InvokeRepeating ("GenerateSpike2", 0, 10);
+		InvokeRepeating ("GenerateSpike3", 0, 15);
+		InvokeRepeating ("GenerateSpike4", 0, 20);
 	}
 
 	// Update is called once per frame

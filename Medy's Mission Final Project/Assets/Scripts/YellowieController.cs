@@ -32,16 +32,31 @@ public class YellowieController : MonoBehaviour {
 
 			AudioSource.PlayClipAtPoint (yellowieHurt, transform.position);
 
-			print ("Yellowie health: " + (hp - 1));
-			if (--hp == 0) {
+			--hp;
+			print ("Yellowie health: " + hp);
+
+			if(hp==1){
+				yellowieAnimator.SetBool("isHurt", true);
+			}else if ( hp == 0) {
 				AudioSource.PlayClipAtPoint (yellowieDies, transform.position);
 				//Destroy (gameObject);
+
 				yellowieAnimator.SetBool("isYellowieDead", true);
+
+				moveRate = 0f;
+				Destroy (gameObject.GetComponent<PolygonCollider2D>());
+				StartCoroutine (destroyGameObject());
+
 				GameObject.Find ("ScoreGenerator").GetComponent<ScoreGeneratorController> ().AddScore (2);
 			}
 		} else if (target.gameObject.tag == "Medy") {
 			AudioSource.PlayClipAtPoint (yellowieDies, transform.position);
 			Destroy (gameObject);
 		}
+	}
+
+	IEnumerator destroyGameObject(){
+		yield return new WaitForSeconds (0.5f);
+		Destroy (gameObject);
 	}
 }

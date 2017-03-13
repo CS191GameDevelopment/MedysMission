@@ -26,14 +26,23 @@ public class GreenieController : MonoBehaviour {
 
 	void OnCollisionEnter2D(Collision2D target){
 		greenieAnimator.SetBool("isGreenieDead", true);
+
+		moveRate = 0f;
+		Destroy (gameObject.GetComponent<PolygonCollider2D>());
+		StartCoroutine (destroyGameObject());
+
 		AudioSource.PlayClipAtPoint (greenieDies, transform.position);
 		if (target.gameObject.tag == "Tablet") {
-			
 			//Destroy (gameObject);
 			Destroy (target.gameObject);
 			GameObject.Find ("ScoreGenerator").GetComponent<ScoreGeneratorController> ().AddScore (1);
 		} else if (target.gameObject.tag == "Medy") {
 			Destroy (gameObject);
 		}
+	}
+
+	IEnumerator destroyGameObject(){
+		yield return new WaitForSeconds (0.5f);
+		Destroy (gameObject);
 	}
 }

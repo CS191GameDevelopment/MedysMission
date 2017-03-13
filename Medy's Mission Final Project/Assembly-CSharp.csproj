@@ -46,7 +46,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\DummyReddy.cs" />
      <Compile Include="Assets\Scripts\BlackieController.cs" />
      <Compile Include="Assets\Scripts\CongratulationsSceneController.cs" />
      <Compile Include="Assets\Scripts\GameOverSceneController.cs" />

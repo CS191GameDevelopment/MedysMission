@@ -13,8 +13,10 @@ public class SpawnerStomachController : MonoBehaviour {
 	public Transform spike3;
 	public Transform spike4;
 
-	int spikeProbabilityMin = 0,
-		spikeProbabilityMax = 2;
+	public float left = GlobalConstants.MIN_X_AXIS+5, 
+	right = GlobalConstants.MAX_X_AXIS-5,
+	upmin = 7f,
+	upmax = 10f;
 
 
 	// Use this for initialization
@@ -22,12 +24,10 @@ public class SpawnerStomachController : MonoBehaviour {
 		InvokeRepeating ("GenerateGreenie", 0, 2);
 		InvokeRepeating ("GenerateYellowie", 0, 5);
 		InvokeRepeating ("GenerateBlackie", 5, 8);
-		/*InvokeRepeating ("GenerateReddie", 0, 2);
-		InvokeRepeating ("GenerateSpike1", spikeProbabilityMin, spikeProbabilityMax);
-		InvokeRepeating ("GenerateSpike2", spikeProbabilityMin, spikeProbabilityMax);
-		InvokeRepeating ("GenerateSpike3", spikeProbabilityMin, spikeProbabilityMax);
-		InvokeRepeating ("GenerateSpike4", spikeProbabilityMin, spikeProbabilityMax);
-		*/
+		InvokeRepeating ("GenerateSpike1", 0, 15);
+		InvokeRepeating ("GenerateSpike2", 0, 20);
+		InvokeRepeating ("GenerateSpike3", 0, 25);
+		InvokeRepeating ("GenerateSpike4", 0, 30);
 	}
 
 	// Update is called once per frame
@@ -52,7 +52,6 @@ public class SpawnerStomachController : MonoBehaviour {
 			GlobalConstants.MAX_Y_AXIS), blackie.rotation);
 	}
 
-	/*
 	void GenerateSpike1(){
 		Instantiate (spike1, new Vector2 (Random.Range (left, right), Random.Range (upmin,upmax)), greenie.rotation);
 	}
@@ -68,5 +67,4 @@ public class SpawnerStomachController : MonoBehaviour {
 	void GenerateSpike4(){
 		Instantiate (spike4, new Vector2 (Random.Range (left, right), Random.Range (upmin,upmax)), greenie.rotation);
 	}
-	*/
 }

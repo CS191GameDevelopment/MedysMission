@@ -18,10 +18,10 @@ public class SpawnerBrainController : MonoBehaviour {
 	public Transform hole3;
 	public Transform hole4;
 
-	private float left = GlobalConstants.MIN_X_AXIS,
-	right = GlobalConstants.MAX_X_AXIS,
-	upmin = GlobalConstants.MIN_Y_AXIS,
-	upmax = GlobalConstants.MAX_Y_AXIS;
+	public float left = GlobalConstants.MIN_X_AXIS+5, 
+	right = GlobalConstants.MAX_X_AXIS-5,
+	upmin = 7f,
+	upmax = 10f;
 
 	int spikeProbabilityMin = 0,
 	spikeProbabilityMax = 2;
@@ -29,13 +29,32 @@ public class SpawnerBrainController : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		InvokeRepeating ("spawnGerms", 0, 10);
-
+		InvokeRepeating ("spawnGerms", 0, 1);
+		InvokeRepeating ("GenerateSpike1", 0, 5);
+		InvokeRepeating ("GenerateSpike2", 0, 10);
+		InvokeRepeating ("GenerateSpike3", 0, 15);
+		InvokeRepeating ("GenerateSpike4", 0, 20);
 	}
-	
-	// Update is called once per frame
-	void Update () {
-		
+
+	void GenerateGreenie(){
+		Instantiate (greenie, new Vector2 (Random.Range (GlobalConstants.MIN_X_AXIS, GlobalConstants.MAX_X_AXIS),
+			GlobalConstants.MAX_Y_AXIS), greenie.rotation);
+	}
+
+	void GenerateSpike1(){
+		Instantiate (spike1, new Vector2 (Random.Range (left, right), Random.Range (upmin,upmax)), greenie.rotation);
+	}
+
+	void GenerateSpike2(){
+		Instantiate (spike2, new Vector2 (Random.Range (left, right), Random.Range (upmin,upmax)), greenie.rotation);
+	}
+
+	void GenerateSpike3(){
+		Instantiate (spike3, new Vector2 (Random.Range (left, right), Random.Range (upmin,upmax)), greenie.rotation);
+	}
+
+	void GenerateSpike4(){
+		Instantiate (spike4, new Vector2 (Random.Range (left, right), Random.Range (upmin,upmax)), greenie.rotation);
 	}
 
 	Transform getRandomEnemy (){

@@ -53,8 +53,13 @@ public class BlackieController : MonoBehaviour {
 
 			AudioSource.PlayClipAtPoint (blackieHurt, transform.position);
 
-			print ("Blackie health: " + (hp - 1));
-			if (--hp == 0) {
+			--hp;
+
+			print ("Blackie health: " + hp);
+
+			if(hp == 1){
+				blackieAnimator.SetBool ("isHurt", true);
+			}else if (hp == 0) {
 				AudioSource.PlayClipAtPoint (blackieDies, transform.position);
 				//Destroy (gameObject);
 
@@ -62,6 +67,8 @@ public class BlackieController : MonoBehaviour {
 					blackieAnimator = gameObject.GetComponent<Animator> ();
 				}
 				blackieAnimator.SetBool ("isDead", true);
+				Destroy (gameObject.GetComponent<PolygonCollider2D>());
+				StartCoroutine (destroyGameObject());
 
 				GameObject.Find ("ScoreGenerator").GetComponent<ScoreGeneratorController> ().AddScore (3);
 			}
@@ -69,5 +76,10 @@ public class BlackieController : MonoBehaviour {
 			AudioSource.PlayClipAtPoint (blackieDies, transform.position);
 			Destroy (gameObject);
 		}
+	}
+
+	IEnumerator destroyGameObject(){
+		yield return new WaitForSeconds (0.5f);
+		Destroy (gameObject);
 	}
 }

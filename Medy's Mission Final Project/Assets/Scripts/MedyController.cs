@@ -42,7 +42,7 @@ public class MedyController : MonoBehaviour {
 
 	IEnumerator delayFiring(){
 		print ("Firing Delay");
-		yield return new WaitForSeconds (0.1f);
+		yield return new WaitForSeconds (0.2f);
 		firingAllowed = true;
 	}
 
@@ -69,13 +69,15 @@ public class MedyController : MonoBehaviour {
 
 	public void OnCollisionEnter2D(Collision2D target){
 		if(target.gameObject.tag == "Yellowie" || target.gameObject.tag == "Greenie"
-			|| target.gameObject.tag == "Blackie" || target.gameObject.tag == "GermAttack"){
+			|| target.gameObject.tag == "Blackie" || target.gameObject.tag == "GermAttack"
+			|| target.gameObject.tag == "Reddie" || target.gameObject.tag == "Spike"){
 
 			AudioSource.PlayClipAtPoint (medyHurt, transform.position);
 
-			if(target.gameObject.tag == "GermAttack"){
-				Destroy (target.gameObject);
-			}
+			medyAnimator.SetBool ("isInPain", true);
+			StartCoroutine (stopPain ());
+
+			Destroy (target.gameObject);
 
 			hp--;
 
@@ -93,6 +95,11 @@ public class MedyController : MonoBehaviour {
 			}
 
 		}
+	}
+
+	IEnumerator stopPain(){
+		yield return new WaitForSecondsRealtime(0.5f);
+		medyAnimator.SetBool ("isInPain", false);
 	}
 }
 
