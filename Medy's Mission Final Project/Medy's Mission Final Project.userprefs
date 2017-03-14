@@ -3,11 +3,13 @@
   <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\GameplayFootTimeController.cs">
     <Files>
       <File FileName="Assets\Scripts\SpawnerLimbController.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\SpawnerBrainController.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\SpawnerFootController.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\SpawnerHeartController.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\SpawnerStomachController.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\SpawnerBrainController.cs" Line="40" Column="63" />
+      <File FileName="Assets\Scripts\SpawnerFootController.cs" Line="34" Column="63" />
+      <File FileName="Assets\Scripts\SpawnerHeartController.cs" Line="20" Column="3" />
+      <File FileName="Assets\Scripts\SpawnerStomachController.cs" Line="56" Column="51" />
       <File FileName="Assets\Scripts\GameplayFootTimeController.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\TriviaBrainSceneController.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\GameOverSceneController.cs" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

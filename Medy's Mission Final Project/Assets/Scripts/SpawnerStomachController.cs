@@ -36,19 +36,19 @@ public class SpawnerStomachController : MonoBehaviour {
 	}
 
 	void GenerateGreenie(){
-		Instantiate (greenie, new Vector2 (Random.Range (GlobalConstants.MIN_X_AXIS, GlobalConstants.MAX_X_AXIS),
+		Instantiate (greenie, new Vector2 (Random.Range (left, right),
 			GlobalConstants.MAX_Y_AXIS), greenie.rotation);
 	}
 
 
 	void GenerateYellowie(){
-		Instantiate (yellowie, new Vector2 (Random.Range (GlobalConstants.MIN_X_AXIS, GlobalConstants.MAX_X_AXIS),
+		Instantiate (yellowie, new Vector2 (Random.Range (left, right),
 			GlobalConstants.MAX_Y_AXIS), yellowie.rotation);
 	}
 
 
 	void GenerateBlackie(){
-		Instantiate (blackie, new Vector2 (Random.Range (GlobalConstants.MIN_X_AXIS, GlobalConstants.MAX_X_AXIS),
+		Instantiate (blackie, new Vector2 (Random.Range (left, right),
 			GlobalConstants.MAX_Y_AXIS), blackie.rotation);
 	}
 

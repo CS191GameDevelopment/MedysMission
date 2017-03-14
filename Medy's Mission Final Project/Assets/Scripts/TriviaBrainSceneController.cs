@@ -15,6 +15,7 @@ public class TriviaBrainSceneController : MonoBehaviour {
 			print ("Enter pressed");
 			Application.LoadLevel ("Gameplay - Brain Scene");
 		}
+
 		if(Input.GetKeyUp(KeyCode.Escape)){
 			print ("Escape pressed");
 			Application.Quit ();

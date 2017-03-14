@@ -27,6 +27,10 @@ public class GameOverSceneController : MonoBehaviour {
 			print ("Enter pressed");
 			Application.LoadLevel ("Home Start Screen");
 		}
+		if(Input.GetKeyUp(KeyCode.F)){
+			print ("F presses");
+			Application.LoadLevel ("Gameplay - Brain Scene");
+		}
 		if(Input.GetKeyUp(KeyCode.Escape)){
 			print ("Escape pressed");
 			Application.Quit ();
